@@ -3,8 +3,9 @@ import java.util.UUID;
 
 public class Cap extends AbstractClother {
 
+    private String name;
     private String colors[] = {"red","black"};
-    private String how_mach[] = {"120","200"};
+    private String how_mach[] = {"100","200"};
     private String firms[] = {"Abibas","Niek","Poma"};
     private int cash;
     private int color;
@@ -20,16 +21,20 @@ public class Cap extends AbstractClother {
     @Override
     public void create(){
         super.create();
+        setName("Cap");
         color = (int) (Math.random() * colors.length);
         cash = (int) (Math.random() * how_mach.length);
+        setCash(cash);
         firm = (int) (Math.random() * firms.length);
+        setFirm(firm);
     }
 
     @Override
     public void read() {
+        System.out.println("Название объекта: " + getName());
         System.out.println("Цвет: " + colors[color]);
-        System.out.println("Цена: " + how_mach[cash]);
-        System.out.println("Фирма: " + firms[firm]);
+        System.out.println("Цена: " + how_mach[getCash()]);
+        System.out.println("Фирма: " + firms[getFirm()]);
         System.out.println("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
     }
 
@@ -48,6 +53,6 @@ public class Cap extends AbstractClother {
 
     @Override
     public void delete() {
-
+        setName("Nothing");
     }
 }

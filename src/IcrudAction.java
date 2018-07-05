@@ -1,4 +1,4 @@
-public interface IcrudAction {
+public interface IcrudAction {//интерфейс
     void create();
     void read();
     void update();

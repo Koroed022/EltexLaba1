@@ -6,7 +6,20 @@ public abstract class AbstractClother implements IcrudAction{
     UUID id_object ;
     private int cash;
     private String name;
-    private String firm;
+
+    public static int getCount_objects() {
+        return count_objects;
+    }
+
+    public int getCash() {
+        return cash;
+    }
+
+    public void setCash(int cash) {
+        this.cash = cash;
+    }
+
+    private int firm;
 
     AbstractClother(){
         id_object = UUID.randomUUID();
@@ -24,12 +37,12 @@ public abstract class AbstractClother implements IcrudAction{
         this.name = name;
     }
 
-    public String getFirm() {
+    public int getFirm() {
         return firm;
     }
 
-    public void setFirm(String firm) {
-        this.firm = firm;
+    public void setFirm(int firm_num) {
+        this.firm = firm_num;
     }
 
     @Override
